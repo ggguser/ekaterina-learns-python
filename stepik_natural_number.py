@@ -1,9 +1,18 @@
 def get_number():
-    number = int(input('Введите натуральное число\n'))
+    return input('Введите натуральное число\n')
+
+
+def is_number_natural(number) -> bool:
+    try:
+        number = int(number)
+    except ValueError:
+        print('Это не натуральное число')
+        return False
+
     if not number > 0:
         print('Натуральное число должно быть > 0')
-        return None
-    return number
+        return False
+    return True
 
 
 def manipulate_natural_number(number):
@@ -33,5 +42,5 @@ def manipulate_natural_number(number):
 
 if __name__ == '__main__':
     input_number = get_number()
-    if input_number is not None:
+    if is_number_natural(input_number):
         manipulate_natural_number(input_number)
