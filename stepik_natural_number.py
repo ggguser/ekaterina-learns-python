@@ -1,3 +1,6 @@
+from typing import List
+
+
 def get_number():
     return input('Введите натуральное число\n')
 
@@ -15,8 +18,24 @@ def is_number_natural(number) -> bool:
     return True
 
 
+def convert_int_to_list(number: int, base=10) -> List[int]:
+    """
+    >>>convert_int_to_list(123)
+    [1, 2, 3]
+    """
+    remainder = number
+    digits_list = []
+    while remainder != 0:
+        last_digit = remainder % base
+        digits_list.append(last_digit)
+
+        remainder //= base
+    return digits_list[::-1]
+
+
 def manipulate_natural_number(number):
-    number_as_digits = [int(char) for char in str(number)]
+    # number_as_digits = [int(char) for char in str(number)]
+    number_as_digits = convert_int_to_list(number)
 
     sum_digits = 0
     for digit in number_as_digits:
