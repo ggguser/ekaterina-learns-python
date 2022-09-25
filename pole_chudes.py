@@ -16,7 +16,7 @@ questions = [
 index = random.randrange(0, len(answers))
 
 question = questions[index]
-answer = answers[index]
+answer = answers[index].upper()
 
 print('Вопрос:', question)
 print('▮' * len(answer))
@@ -26,7 +26,7 @@ penalty_points = 0
 guessed_letters = []
 while penalty_points < max_penalty_points:
     print('Введите букву: ')
-    try_letter = str(input())
+    try_letter = str(input()).upper()
 
     if try_letter in answer:
         print('Есть такая буква!')
