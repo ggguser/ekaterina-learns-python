@@ -1,10 +1,10 @@
-#Задан словарь, его значения необходимо внести по соответвющим тегам и атрибутам вместо вопросов (?)
+# Задан словарь, его значения необходимо внести по соответствующим тегам и атрибутам вместо вопросов (?)
 # заполненный шаблон записать в файл index.html
 
 page = {"title": "Тег BODY",
         "charset": "utf-8",
         "alert": "Документ загружен",
-        "p": "Ut wisis enim ad minim veniam,  suscipit lobortis nisl ut aliquip ex ea commodo consequat."}
+        "p": "Ut wis    is enim ad minim veniam,  suscipit lobortis nisl ut aliquip ex ea commodo consequat."}
 
 
 template = """ 
@@ -23,13 +23,13 @@ template = """
 """
 
 new_lines = []
-for line in template.split('\n'):
+for line in template.splitlines(keepends=True):
     if '?' in line:
         for key, value in page.items():
             if key in line:
                 line = line.replace('?', value)
                 break
-    new_lines.append(line + '\n')
+    new_lines.append(line)
 
 
 fd = open('index.html', 'w+', encoding='utf-8')
