@@ -62,4 +62,4 @@ def manipulate_natural_number(number):
 if __name__ == '__main__':
     input_number = get_number()
     if is_number_natural(input_number):
-        manipulate_natural_number(input_number)
+        manipulate_natural_number(int(input_number))
