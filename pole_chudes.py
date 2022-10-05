@@ -19,6 +19,7 @@ question = questions[index]
 answer = answers[index].upper()
 
 print('Вопрос:', question)
+print(f'{len(answer)} букв')
 print('▮' * len(answer))
 
 max_penalty_points = 10
