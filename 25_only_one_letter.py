@@ -4,10 +4,9 @@
 # Буквы должны идти в том порядке,
 # в котором встретились во фразе в первый раз.
 
-#Input             	            Output
-
-# apple	                        aple
-#25.04.2022 Good morning !!	    godmrni
+# Input             	            Output
+# apple	                            aple
+# 25.04.2022 Good morning!!	       godmrni
 
 
 def only_one_letter(input_string):
